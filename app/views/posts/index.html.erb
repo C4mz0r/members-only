@@ -1,4 +1,5 @@
 <% @posts.each do |p| %>  
+  <%= p.created_at.to_formatted_s(:short) %>
   <%= display_name(p.user) %> wrote:
   <br>
   <strong>
@@ -9,4 +10,8 @@
   	<%= p.body %>
   </em>
   <hr>
+<% end %>
+<%= link_to 'Create New Post', new_post_path %>
+<% if signed_in? %>
+	<%= link_to 'signout', logout_path, method: :delete %>
 <% end %>

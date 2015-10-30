@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user.authenticate(params[:session][:password])
       sign_in(user)
       #render :text => 'looks like we signed in'
-      render 'index'
+      redirect_to posts_path
     else
       redirect_to :login
     end

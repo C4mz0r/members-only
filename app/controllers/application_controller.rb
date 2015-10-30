@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   
   def sign_out
     #byebug
-    current_user.remember_token = nil
+    current_user.remember_token = nil unless current_user.nil?
     cookies[:remember_token] = nil
   end
   
@@ -38,5 +38,6 @@ class ApplicationController < ActionController::Base
   end
   
   helper_method :display_name #so that view can see it
+  helper_method :signed_in?
   
 end
