@@ -11,9 +11,9 @@ class ApplicationController < ActionController::Base
   end
   
   def current_user
-    current_user ||= User.find_by(remember_token: Digest::SHA1.hexdigest(cookies[:remember_token])) 
+    @current_user ||= User.find_by(remember_token: Digest::SHA1.hexdigest(cookies[:remember_token])) 
     #byebug
-    return current_user
+    return @current_user
   end
   
   def current_user=(user)
