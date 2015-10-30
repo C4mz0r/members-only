@@ -1,16 +1,22 @@
 <% @posts.each do |p| %>  
 	<div class="post">
-	  <%= p.created_at.to_formatted_s(:short) %>
-	  <%= display_name(p.user) %> wrote:
-	  
-	  <div class="posttitle">
-	  	<%= p.title %>
+	  <div class="poster">
+	  	<p>
+	  	<%= p.created_at.to_formatted_s(:short) %>
+	  	</p>
+	  	<p>
+	  	<%= display_name(p.user) %>
+	  	</p>
 	  </div>
-	  
-	  <div class="postbody">
-	  	<%= p.body %>
+	  <div class="postcontent">
+		  <div class="posttitle">
+		  	<%= p.title %>
+		  </div>
+		  
+		  <div class="postbody">
+		  	<%= p.body %>
+		  </div>
 	  </div>
-	  
 	</div>
 <% end %>
 <%= link_to 'Create New Post', new_post_path %>
