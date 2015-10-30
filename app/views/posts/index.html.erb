@@ -1,0 +1,12 @@
+<% @posts.each do |p| %>  
+  <%= display_name(p.user) %> wrote:
+  <br>
+  <strong>
+  	<%= p.title %>
+  </strong>
+  <br>
+  <em>
+  	<%= p.body %>
+  </em>
+  <hr>
+<% end %>
