@@ -1,15 +1,17 @@
 <% @posts.each do |p| %>  
-  <%= p.created_at.to_formatted_s(:short) %>
-  <%= display_name(p.user) %> wrote:
-  <br>
-  <strong>
-  	<%= p.title %>
-  </strong>
-  <br>
-  <em>
-  	<%= p.body %>
-  </em>
-  <hr>
+	<div class="post">
+	  <%= p.created_at.to_formatted_s(:short) %>
+	  <%= display_name(p.user) %> wrote:
+	  
+	  <div class="posttitle">
+	  	<%= p.title %>
+	  </div>
+	  
+	  <div class="postbody">
+	  	<%= p.body %>
+	  </div>
+	  
+	</div>
 <% end %>
 <%= link_to 'Create New Post', new_post_path %>
 <% if signed_in? %>
