@@ -9,9 +9,14 @@ class PostsController < ApplicationController
   
   def create
     # needs error handling! 
-    current_user.posts.create(post_params)
-    #render :text => 'hey'
-    redirect_to :posts
+    @post = current_user.posts.create(post_params)
+    if @post.valid?
+      redirect_to :posts  
+    else
+      flash.now[:error] = "Error in post"
+      render 'posts/new'      
+    end
+    
   end
   
   def index
