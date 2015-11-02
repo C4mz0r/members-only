@@ -15,7 +15,8 @@ class PostsController < ApplicationController
   end
   
   def index
-    @posts = Post.all
+    #@posts = Post.all --> Notice a lot of noise querying for each user who wrote each post after the fact
+    @posts = Post.includes(:user).all # use this to reduce the N+1 query problem
   end
   
   
