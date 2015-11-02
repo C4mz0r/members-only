@@ -1,13 +1,15 @@
 .posttitle {
 	font-weight: 900;
 	font-size: 1.5em;
-	background-color:green;
+	background-color:#CCC;
+	border-radius: 10px;
 }
 
 .poster {
 	float: left;
 	width: 10%;
-	background-color:yellow;
+	background-color:#CCC;
+	border-radius: 10px;
 }
 
 .postcontent {
@@ -19,15 +21,16 @@
 .postbody {
 	font-style: italic;
 	font-size: 1.5em;
-	background-color:blue;
+	background-color:#CCC;
 }
 
 .post {
 	border: 1px solid blue;
 	font-family: Arial;
-	background-color:yellow;
+	background-color:#ccc;
 	clear:both;
 	height: 100px;
+	border-radius: 10px;
 	
 
 }
